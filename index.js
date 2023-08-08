@@ -38,10 +38,9 @@ app.post('/api/contact', (req, res) => {
     });
 
     let mailOptions = {
-        from: from,
         to: process.env.EMAIL_USERNAME,
         subject: subject,
-        text: message,
+        text: `From: ${from} \n Message: ${message}`,
     };
 
     try {
